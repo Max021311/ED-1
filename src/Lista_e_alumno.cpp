@@ -36,6 +36,20 @@ int Lista_e_alumno::busqueda_lineal(int codigo) {
     return -1;
 }
 
+int Lista_e_alumno::busqueda_binaria(int codigo) {
+    int i=0, j=ultimo,m;
+    while(i<=j){
+        m = (i+j)/2;
+        if (codigo==Grupo[m].get_codigo())
+            return m;
+        if (codigo<Grupo[m].get_codigo())
+            j = m-1;
+        if (codigo>Grupo[m].get_codigo())
+            i = m+1;
+    }
+    return -1;
+}
+
 void Lista_e_alumno::bubble_sort() {
     for (int i = ultimo; i>0; i--) {
         for(int j = 0; j<i; j++) {
@@ -43,6 +57,28 @@ void Lista_e_alumno::bubble_sort() {
                 intercambio(j, j+1);
         }
     }
+}
+
+void Lista_e_alumno::bubble_sort_improved() {
+    bool flag = true;
+    for (int i = ultimo; i>0 && flag; i--) {
+        flag = false;
+        for (int j = 0; j<i; j++) {
+            if (Grupo[j].get_codigo() > Grupo[j+1].get_codigo()) {
+                intercambio(j, j+1);
+                flag = true;
+            }
+        }
+
+    }
+}
+
+void Lista_e_alumno::shell_sort() {
+    for(int dist = ultimo*0.75; dist>0; dist*0.75)
+        for (int i = 0; i+dist <= ultimo; i++)
+            if (Grupo[i].get_codigo() > Grupo[i+dist].get_codigo()) {
+                intercambio(i, i+dist);
+            }
 }
 
 void Lista_e_alumno::intercambio(int i, int j) {

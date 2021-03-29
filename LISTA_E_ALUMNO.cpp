@@ -20,7 +20,9 @@ int main () {
     std::cout << std::endl;
 
     std::cout << "Reimprimiendo lista ordenada" << std::endl;
-    L.bubble_sort();
+//    L.bubble_sort();
+    L.bubble_sort_improved();
+//    L.shell_sort();
     L.print();
 
     std::cout << "Reimpriendo lista tras eliminar un Alumno" << std::endl;
@@ -29,9 +31,15 @@ int main () {
 
     std::cout << std::endl;
 
-    std::cout << "Buscando el codigo 1234" << std::endl;
+    std::cout << "Busqueda lineal del codigo 1234" << std::endl;
     int busqueda = L.busqueda_lineal(1234);
     std::cout << "Esta en la posicion: " << busqueda << std::endl;
+
+   std::cout << std::endl;
+
+   std::cout << "Busqueda binaria del codigo 34324" << std::endl;
+   busqueda = L.busqueda_binaria(34324);
+   std::cout << "Esta en la posicion: " << busqueda << std::endl;
 
    std::cout << std::endl;
 

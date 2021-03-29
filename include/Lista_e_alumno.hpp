@@ -15,8 +15,11 @@ public:
     void eliminar(int position);
     void print();
     int busqueda_lineal(int codigo);
+    int busqueda_binaria(int codigo);
     void intercambio(int i, int j);
     void bubble_sort();
+    void bubble_sort_improved();
+    void shell_sort();
 };
 
 
