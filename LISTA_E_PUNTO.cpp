@@ -1,4 +1,5 @@
 #include <Lista_e_punto.hpp>
+#include <math.h>
 
 int main() {
     Lista_e_punto L;
@@ -20,8 +21,17 @@ int main() {
     L.elimina(2);
     L.print();
 
+    std::cout << std::endl;
+
+    std::cout << "Busqueda lineal del punto (1, 2)" << std::endl;
     int busqueda = L.busqueda_lineal(aux2);
     std::cout << "El objeto se encuentra en la posicion: " << busqueda << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Busqueda binaria del punto (1, 2)" << std::endl;
+    busqueda = L.busqueda_binaria(aux2);
+    std::cout << "El punto se encuentra en la posicion: " << busqueda << std::endl;
 
     std::cout << "Esta vacia? " <<L.vacia() << std::endl;
     std::cout << "Esta llena?" << L.llena() << std::endl;

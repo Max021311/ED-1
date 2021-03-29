@@ -27,6 +27,8 @@ public:
 
     void print();
     bool operator ==(Punto p);
+    bool operator < (Punto p) { return magnitud<p.magnitud;}
+    bool operator > (Punto p) { return magnitud>p.magnitud;}
 };
 
 

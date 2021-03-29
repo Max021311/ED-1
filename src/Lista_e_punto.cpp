@@ -31,3 +31,30 @@ int Lista_e_punto::busqueda_lineal(Punto p) {
     }
     return -1;
 }
+
+int Lista_e_punto::busqueda_binaria(Punto p) {
+    int i = 0, j = ultimo, m;
+    while (i<+j) {
+        m=(i+j)/2;
+        if (p==dato[m])
+            return m;
+        if (p>dato[m])
+            i=m+1;
+        if (p<dato[m])
+            j=m-1;
+    }
+    return -1;
+}
+
+void Lista_e_punto::intercambio(int i, int j) {
+    Punto aux = dato[i];
+    dato[i] = dato[j];
+    dato[j] = aux;
+}
+
+void Lista_e_punto::bubble_sort() {
+    for (int i = ultimo; i>0; i--)
+        for (int j = 0; j<i; j++)
+            if(dato[j]>dato[j+1])
+                intercambio(j, j+1);
+}
