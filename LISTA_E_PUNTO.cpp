@@ -7,12 +7,19 @@ int main() {
     L.inicializa();
 
     L.agregar(aux, 0);
-    aux.set(3,4);
-    L.agregar(aux, 1);
     aux.set(5,4);
+    L.agregar(aux, 1);
+    aux.set(3,4);
     L.agregar(aux, 2);
 
     std::cout << "Imprimiendo lista" << std::endl;
+    L.print();
+
+    std::cout << "Imprimiendo lista ordenada" << std::endl;
+//    L.bubble_sort();
+//    L.shell();
+//    L.insertion();
+    L.selection();
     L.print();
 
     std::cout << std::endl;

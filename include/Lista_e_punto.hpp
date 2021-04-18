@@ -17,6 +17,10 @@ public:
     void print();
     void intercambio(int a, int b);
     void bubble_sort();
+    void bubble_sort_improved();
+    void shell();
+    void insertion();
+    void selection();
 };
 
 
