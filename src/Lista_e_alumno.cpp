@@ -81,6 +81,31 @@ void Lista_e_alumno::shell_sort() {
             }
 }
 
+void Lista_e_alumno::insertion() {
+   Alumno aux;
+   int j;
+    for (int i = 1; i <= ultimo; i++) {
+        aux=Grupo[i];
+        for (j = i; j > 0 && aux.get_codigo() < Grupo[j-1].get_codigo(); j--)
+            Grupo[j]=Grupo[j-1];
+        if(i!=j)
+            Grupo[j] = aux;
+    }
+}
+
+void Lista_e_alumno::selection() {
+    int menor;
+    for (int i = 0; i < ultimo; i++) {
+        menor = i;
+        for (int j = i+1; j <= ultimo; j++) {
+            if (Grupo[menor].get_codigo() > Grupo[j].get_codigo())
+                menor = j;
+        }
+        if (i != menor)
+            intercambio(i, menor)
+    }
+}
+
 void Lista_e_alumno::intercambio(int i, int j) {
     Alumno aux = Grupo[j];
     Grupo[j] = Grupo[i];

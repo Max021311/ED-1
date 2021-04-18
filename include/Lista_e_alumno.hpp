@@ -20,6 +20,8 @@ public:
     void bubble_sort();
     void bubble_sort_improved();
     void shell_sort();
+    void insertion();
+    void selection();
 };
 
 

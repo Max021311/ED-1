@@ -21,8 +21,10 @@ int main () {
 
     std::cout << "Reimprimiendo lista ordenada" << std::endl;
 //    L.bubble_sort();
-    L.bubble_sort_improved();
+//    L.bubble_sort_improved();
 //    L.shell_sort();
+//    L.insertion();
+    L.selection();
     L.print();
 
     std::cout << "Reimpriendo lista tras eliminar un Alumno" << std::endl;
