@@ -23,3 +23,8 @@ set(LIBS_LISTA_PUNTO
         Lista_e_punto.cpp
 )
 add_library(lista_punto STATIC ${LIBS_LISTA_PUNTO})
+
+set(LIBS_PILA
+    Pila.cpp
+)
+add_library(pila STATIC ${LIBS_PILA})

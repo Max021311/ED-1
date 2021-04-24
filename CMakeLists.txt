@@ -21,3 +21,6 @@ target_link_libraries(PUNTO punto)
 
 add_executable(LISTA_E_PUNTO LISTA_E_PUNTO.cpp)
 target_link_libraries(LISTA_E_PUNTO lista_punto)
+
+add_executable(PILA PILA.cpp)
+target_link_libraries(PILA pila)

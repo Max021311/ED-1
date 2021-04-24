@@ -102,7 +102,7 @@ void Lista_e_alumno::selection() {
                 menor = j;
         }
         if (i != menor)
-            intercambio(i, menor)
+            intercambio(i, menor);
     }
 }
 
