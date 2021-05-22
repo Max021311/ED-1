@@ -12,7 +12,7 @@ public:
 
     bool vacia() { return tope == -1; }
 
-    bool lenna() { return tope == 30; }
+    bool llena() { return tope == 30; }
 
     void push(int dato);
 

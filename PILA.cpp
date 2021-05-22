@@ -6,6 +6,7 @@ int main() {
     p.push(1);
     p.push(2);
     p.push(3);
+    p.pop();
     p.print();
     return 0;
 }

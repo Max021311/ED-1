@@ -22,6 +22,8 @@ public:
     void shell_sort();
     void insertion();
     void selection();
+    void mezcla(int izq, int der);
+    void quicksort(int izq, int der);
 };
 
 

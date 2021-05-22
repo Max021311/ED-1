@@ -102,3 +102,66 @@ void Lista_e_punto::selection(){
             intercambio(i,menor);
     }
 }
+
+void Lista_e_punto::mezcla(int izq, int der) {
+    if (izq >= der) // Criterio de paro
+        return;
+
+        // Recursividad
+    int medio = (izq+der)/2;
+    mezcla(izq, medio);
+    mezcla(medio+1, der);
+
+    // Cuerpo de la funcion
+    Punto temp[ultimo+1];
+    for (int i = izq; i <= der; i++)
+        temp[i] = dato[i];
+
+    int i = izq, j = medio+1, x = izq;
+
+    while(i<=medio && j<=der) {
+        while(i<=medio && temp[i] <= temp[j]){
+            dato[x]=temp[i];
+            i++;
+            x++;
+        }
+        while(i<=der && temp[j] <= temp[i]){
+            dato[x]=temp[j];
+            j++;
+            x++;
+        }
+    }
+
+    while (i <= medio) {
+        dato[x]=temp[i];
+        i++;
+        x++;
+    }
+
+    while (j <= der) {
+        dato[x]=temp[j];
+        j++;
+        x++;
+    }
+}
+
+void Lista_e_punto::quicksort(int izq, int der) {
+    if (izq>=der)
+        return;
+    int i = izq, j = der;
+    while (i < j) {
+        while (i<j && dato[i] <= dato[der])
+            i++;
+        while(i<j && dato[j] >= dato[der])
+            j--;
+
+        if (i != j)
+            intercambio(i, j);
+    }
+
+    if (i != der)
+        intercambio(i, der);
+
+    quicksort(izq, i-1);
+    quicksort(i+1, der);
+}

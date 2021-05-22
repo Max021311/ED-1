@@ -106,6 +106,66 @@ void Lista_e_alumno::selection() {
     }
 }
 
+void Lista_e_alumno::mezcla(int izq, int der) {
+    if (izq>=der)
+        return;
+    int m = (izq + der)/2;
+
+    mezcla(izq, m);
+    mezcla(m+1, der);
+    Alumno temp[ultimo + 1];
+    for (int i = izq; i <= der; i++)
+        temp[i]=Grupo[i];
+    int i = izq, j = m+1, x = izq;
+
+    while (i<=m && j<=der) {
+        while (i<=m && temp[i].get_codigo() <= temp[j].get_codigo()) {
+            Grupo[x]=temp[i];
+            i++;
+            x++;
+        }
+
+        while (j<=der && temp[j].get_codigo() <= temp[i].get_codigo()) {
+            Grupo[x]=temp[j];
+            j++;
+            x++;
+        }
+
+        while (i<=m) {
+            Grupo[x]=temp[i];
+            i++;
+            x++;
+        }
+
+        while (j<=der) {
+            Grupo[x]=temp[j];
+            j++;
+            x++;
+        }
+    }
+}
+
+void Lista_e_alumno::quicksort(int izq, int der) {
+    if (izq>=der)
+        return;
+    int i = izq, j = der;
+    while (i < j) {
+        while (i<j && Grupo[i].get_codigo() <= Grupo[der].get_codigo())
+            i++;
+        while(i<j && Grupo[j].get_codigo() >= Grupo[der].get_codigo())
+            j--;
+
+        if (i != j)
+            intercambio(i, j);
+    }
+
+    if (i != der)
+        intercambio(i, der);
+
+    quicksort(izq, i-1);
+    quicksort(i+1, der);
+}
+
 void Lista_e_alumno::intercambio(int i, int j) {
     Alumno aux = Grupo[j];
     Grupo[j] = Grupo[i];
