@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 project(ED_1)
 
 set(LIBS)
@@ -26,3 +26,5 @@ add_executable(PILA PILA.cpp)
 target_link_libraries(PILA pila)
 
 add_executable(RECURSIVIDAD RECURSIVIDAD.cpp)
+
+add_executable(APUNTADORES APUNTADORES.cpp)
