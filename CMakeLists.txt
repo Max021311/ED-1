@@ -31,3 +31,6 @@ add_executable(APUNTADORES APUNTADORES.cpp)
 
 add_executable(LISTA_SL LISTA_SIMPLEMENTE_LIGADA.cpp)
 target_link_libraries(LISTA_SL lista_sl)
+
+add_executable(LISTA_DL LISTA_DL.cpp)
+target_link_libraries(LISTA_DL lista_dl)

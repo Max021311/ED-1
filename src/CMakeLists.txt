@@ -35,3 +35,10 @@ set(LIBS_LISTA_SL
         )
 
 add_library(lista_sl STATIC ${LIBS_LISTA_SL})
+
+set(LIBS_LISTA_DL
+        ${LIBS_PUNTO}
+        Lista_dl.cpp
+        )
+
+add_library(lista_dl STATIC ${LIBS_LISTA_DL})
